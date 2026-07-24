@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Charreyre | Danse-Thérapie ADDI & Médiation Créative à Mornant</title>
+    <meta name="description" content="Séances de danse-thérapie ADDI et médiation créative à Mornant. Accompagnement personnalisé pour burn-out, transition de vie, mieux-être.">
+    <meta name="keywords" content="burnout, burn-out, danse thérapie, ADDI, médiation créative, Mornant, bien-être, mouvement, soin, corps, Nicolas Charreyre">
+    <meta name="author" content="Nicolas Charreyre">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Nicolas Charreyre | Danse-Thérapie ADDI & Médiation Créative">
+    <meta property="og:description" content="Séances de danse-thérapie ADDI et médiation créative à Mornant. Un espace bienveillant pour se retrouver et se recréer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nico150981.github.io/site-danse-therapie-ADDI-et-m-diation-cr-ative/site-final/">
+    <meta property="og:image" content="https://nico150981.github.io/site-danse-therapie-ADDI-et-m-diation-cr-ative/site-final/images/accueil-isadora.jpg">
+    <meta property="og:locale" content="fr_FR">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nicolas Charreyre | Danse-Thérapie ADDI & Médiation Créative">
+    <meta name="twitter:description" content="Danse-thérapie ADDI, médiation créative à Mornant. Accompagnement burnout, transition de vie.">
+    <meta name="twitter:image" content="https://nico150981.github.io/site-danse-therapie-ADDI-et-m-diation-cr-ative/site-final/images/accueil-isadora.jpg">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Nicolas Charreyre - Danse-Thérapie ADDI & Médiation Créative",
+      "description": "Séances de danse-thérapie ADDI et médiation créative à Mornant. Spécialisé dans l'accompagnement du burn-out, des transitions de vie et du mieux-être.",
+      "url": "https://nico150981.github.io/site-danse-therapie-ADDI-et-m-diation-cr-ative/site-final/",
+      "telephone": "0782637092",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "17 rue Waldwisse",
+        "addressLocality": "Mornant",
+        "postalCode": "69440",
+        "addressCountry": "FR"
+      },
+      "priceRange": "En fonction des revenus",
+      "sameAs": []
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;600&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'Z003';
+            src: url('fonts/Z003-MediumItalic.woff2') format('woff2'),
+                 url('fonts/Z003-MediumItalic.otf') format('opentype');
+            font-weight: 500;
+            font-style: italic;
+            font-display: swap;
+        }
+        :root {
+            --police-titres: 'Playfair Display', Georgia, serif;
+            --police-titres-z003: 'Z003', cursive, serif;
+            --police-corps: 'Inter', system-ui, sans-serif;
+            --police-texte-explicatif: 'Gentium Book Plus', Georgia, serif;
+            --police-mono: 'JetBrains Mono', monospace;
+            --fond-page: #FAF8F5;
+            --fond-carte: #FFFFFF;
+            --fond-citation: #F0FDFA;
+            --texte-titres: #292524;
+            --texte-corps: #57534E;
+            --accent: #0D9488;
+            --accent-bordure: #0D9488;
+            --bleu-ciel: #E1F5FE;
+            --bleu-ciel-texte: #0277BD;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--police-corps);
+            background-color: var(--fond-page);
+            color: var(--texte-corps);
+            line-height: 1.7;
+            font-size: 1.2rem;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--accent-bordure);
+        }
+        .logo {
+            font-family: var(--police-titres);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--texte-titres);
+            text-decoration: none;
+        }
+        nav a {
+            margin-left: 1.2rem;
+            text-decoration: none;
+            color: var(--texte-corps);
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        nav a:hover { color: var(--accent); }
+        section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+        h2 {
+            font-family: var(--police-titres);
+            font-size: 3rem;
+            color: var(--texte-titres);
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            font-family: var(--police-titres);
+            font-size: 1.8rem;
+            color: var(--texte-titres);
+            margin-bottom: 1rem;
+        }
+        .accueil-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .accueil-intro {
+            font-size: 2.2rem;
+            font-family: var(--police-titres);
+            color: var(--texte-titres);
+            font-style: italic;
+        }
+        .accueil-comment {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .citation-bleue {
+            background: var(--bleu-ciel);
+            border-left: 6px solid var(--bleu-ciel-texte);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-family: var(--police-titres);
+            font-size: 1.7rem;
+            font-weight: bold;
+            font-style: italic;
+            color: var(--bleu-ciel-texte);
+            border-radius: 0 8px 8px 0;
+        }
+        .bloc-chemin {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--fond-carte);
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            font-size: 1.2rem;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.3s;
+            font-size: 1.2rem;
+        }
+        .btn:hover { background: var(--accent-bordure); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .card {
+            background: var(--fond-carte);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { font-size: 1.9rem; color: var(--texte-titres); margin-bottom: 1rem; }
+        .card p { font-size: 1.1rem; }
+        .card:nth-child(1) { background: var(--fond-citation); border-top: 5px solid var(--accent); }
+        .card:nth-child(2) { background: var(--bleu-ciel); border-top: 5px solid var(--bleu-ciel-texte); }
+        .card:nth-child(3) { background: #FFF4E6; border-top: 5px solid #D97706; }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--fond-carte);
+            color: var(--texte-corps);
+            font-size: 1rem;
+        }
+        /* Mise en page avec image à droite */
+        .section-avec-image {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .section-avec-image img {
+            flex: 1 1 300px;
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .section-avec-image .texte {
+            flex: 2 1 400px;
+            font-size: 1.2rem;
+        }
+        .photo-contact {
+            flex: 0 1 320px !important;
+            max-width: 320px !important;
+            height: 400px;
+            object-fit: cover;
+        }
+        .mediation-img {
+            flex: 0 1 320px !important;
+            max-width: 320px !important;
+            height: 260px;
+            object-fit: cover;
+        }
+        .img-half {
+            flex: 0 1 260px !important;
+            max-width: 260px !important;
+            height: auto;
+        }
+        .img-medium {
+            flex: 0 1 400px !important;
+            max-width: 400px !important;
+            height: auto;
+        }
+        .temoignage {
+            background: var(--fond-carte);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .temoignage p:first-child {
+            font-style: italic;
+            font-size: 1.15rem;
+        }
+        .temoignage-nom {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-align: right !important;
+        }
+        h2, h3, .logo {
+            font-family: var(--police-titres-z003);
+        }
+        section p {
+            font-family: var(--police-texte-explicatif);
+            text-align: justify;
+        }
+        .card p {
+            font-family: var(--police-corps);
+            text-align: center;
+        }
+        .accueil-comment {
+            font-family: var(--police-corps);
+            text-align: left;
+        }
+        .map-embed {
+            border: 0;
+            border-radius: 16px;
+            width: 100%;
+            height: 350px;
+            margin-top: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.5rem; font-size: 1rem; }
+            .accueil-intro { font-size: 1.6rem; }
+            .citation-bleue { font-size: 1.3rem; padding: 1rem; }
+            h2 { font-size: 2.2rem; }
+            .card h3 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Danse-Thérapie ADDI</a>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#lieu">Le Lieu</a>
+            <a href="#danse">Danse-Thérapie</a>
+            <a href="#parcours">Mon parcours</a>
+            <a href="#approche">Approche</a>
+            <a href="#mediation">Médiation</a>
+            <a href="#temoignages">Témoignages</a>
+            <a href="#inspiration">Inspiration</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Section Accueil -->
+    <section id="accueil" style="padding-top: 2rem; padding-bottom: 6rem;">
+        <img src="images/accueil-isadora.jpg" alt="Danse et mouvement" class="accueil-image">
+
+        <div class="section-avec-image" style="margin-bottom: 2rem;">
+            <div class="texte">
+                <div class="accueil-intro">Bienvenue : dans l’espace ou le corps,<br> le cœur et l’esprit s’animent et se libèrent</div>
+            </div>
+            <img src="images/bienvenue.png" alt="Bienvenue" class="img-medium">
+        </div>
+
+        <p class="accueil-comment">Comment :</p>
+        <p>Prendre le temps de ralentir et laisser le chemin se faire en soi</p>
+        <p style="margin-top: 1.5rem;">Avant l'épuisement total ou après un Burnout, une période de transition de vie complexe, venez prendre le temps de ralentir, de laisser le chemin se faire en soi.</p>
+
+        <div class="section-avec-image" style="margin-top: 2rem;">
+            <div class="citation-bleue" style="margin:0; flex: 2 1 400px;">
+                « Un voyage pour sentir, goûter, savourer :<br> vers un mieux-être »
+            </div>
+            <img src="images/ressourcement.jpg" alt="Ressourcement" class="img-half">
+        </div>
+
+        <div class="bloc-chemin">
+            <p style="font-size: 1.4rem; font-weight: 600; color: var(--texte-titres); margin-bottom: 1rem;">C’est le chemin qui compte :</p>
+            <p>vous êtes libre pour imaginer, créer, explorer, s'exprimer et danser.</p>
+            <p style="margin-top: 1.2rem;"><strong>Se déposer :</strong> déposer ses histoires et expériences, évacuer ses souffrances, troubles et mal-être, p(a)enser ses blessures, et réguler ses émotions.</p>
+        </div>
+        <a href="#contact" class="btn">Prendre rendez-vous</a>
+    </section>
+
+    <!-- Section Lieu d’Accueil & de Soin -->
+    <section id="lieu" style="background-color: var(--fond-citation); max-width: 100%; padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>Lieu d’Accueil & de Soin</h2>
+            <div class="section-avec-image">
+                <div class="texte"><p>Je vous accueille dans un lieu bienveillant, chaleureux, lumineux, naturel et discret, on se sent chez soi, en sécurité, accueilli tel que l’on est, en toute authenticité et en confiance. C’est un cadre de soin où l’on retrouve la joie de vivre dans l’instant présent, un espace de créativité, de recréation de soi, de cœur à cœur.</p></div>
+                <img src="images/photo-accueil.jpg" alt="Lieu d'accueil chaleureux">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Danse-Thérapie -->
+    <section id="danse">
+        <h2>Danse-Thérapie ADDI</h2>
+        <div class="grid">
+            <div class="card"><h3>Pour qui ?</h3><p>Adultes en transition de vie, surmenage, ou en quête de mieux-être corporel et émotionnel.</p></div>
+            <div class="card"><h3>L'approche</h3><p>Une plongée dans l’ici et maintenant, basée sur l’écoute du corps et le mouvement authentique.</p></div>
+            <div class="card"><h3>Le cadre</h3><p>Séances individuelles adaptées à vos besoins, dans un espace bienveillant et confidentiel.</p></div>
+        </div>
+        <h3 style="margin-top: 3rem;">Approche dynamique et souple</h3>
+        <p>L’accompagnement et le soin sont personnalisés. Je les adapte à chacun, dans l’instant présent et dans la continuité, en prenant en compte les besoins, les désirs, les ressources, ainsi que les dimensions physiques, émotionnelles et relationnelles. La parenthèse de soin est un lieu de recréation et de liberté, rien n’y est obligatoire, où l’on prend le temps de se retrouver, de créer de l’espace en soi et de renouer avec ses forces profondes.</p>
+    </section>
+
+    <!-- Section Mon parcours -->
+    <section id="parcours" style="background-color: var(--fond-page); max-width: 100%; padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>Mon parcours, au cœur du mouvement</h2>
+            <div class="section-avec-image" style="margin-bottom: 2rem;">
+                <div class="texte"><p>Je suis aide-soignant à domicile depuis plus de 14 ans. Passionné par les danses folkloriques d’Israël, la danse de louange et la danse naturelle, j’ai développé au fil du temps un profond intérêt pour le lien entre le mouvement, le soin et l’expression de soi.</p></div>
+                <img src="images/photo-addi.png" alt="ADDI" class="img-half">
+            </div>
+            <div class="citation-bleue">« Je suis passionné par le mouvement,<br> le soin, et l’expression de soi »</div>
+            <div class="section-avec-image" style="margin-top: 2rem;">
+                <div class="texte"><p>En 2021, j’ai suivi pendant un an une formation en art-thérapie à Avignon. Désireux de revenir aux origines de la danse-thérapie, j’ai ensuite participé, en tant que soignant, à une formation continue ADDI (Approche Développementale Dynamique et Intégrative) avec Marie-Ange Durwang, aux côtés de psychomotriciens. Cette expérience m’a permis de rencontrer des personnes formidables et de découvrir la richesse d’un travail de groupe fondé sur la bienveillance, la qualité de présence et le soin de soi.</p></div>
+                <img src="images/photo-atelier.jpg" alt="Atelier">
+            </div>
+            <p style="margin-top: 2rem;">Je poursuis également mon exploration par la participation à plusieurs ateliers de Body-Mind Centering. L’ADDI m’a offert l’occasion d’unifier mes expériences somatiques, artistiques, relationnelles et dansées.</p>
+            <p>Aujourd’hui, animé par une profonde conscience des fragilités de notre société, j’ai souhaité proposer un accompagnement aux adultes en transition, en surmenage ou en burn-out. Mon intention est d’offrir un espace d’écoute, de présence et de ressourcement, dans un cadre humain, respectueux et bienveillant.</p>
+        </div>
+    </section>
+
+    <!-- Section Approche -->
+    <section id="approche">
+        <h2>Une approche globale et dynamique du soin</h2>
+        <div class="citation-bleue">« Le soin s’enracine dans l’observation clinique<br> de l’enfant sain »</div>
+        <div class="section-avec-image" style="margin-top: 2rem;">
+            <div class="texte"><p>Ce qui me parle profondément dans la démarche de l’ADDI, c’est que le travail de soin s’enracine dans l’observation clinique de l’enfant sain, son mouvement physique au sein de son environnement naturel, pour favoriser son développement. C'est un cadre de référence pour le soin de l'adulte. L’ADDI ce n’est pas une théorie, c’est « une plongée corporelle dans ici et maintenant ». J'ai revisité, observé et intégré sensoriellement mon propre mouvement de développement, toujours en relation. Cette approche m’a permis d'affiner une perception fine de l’autre : dans ses interactions, son identité naissante et son rapport à lui-même.</p></div>
+            <img src="images/photo-approche.png" alt="Approche ADDI" class="img-medium">
+        </div>
+        <div class="citation-bleue" style="margin-top: 2rem;">« L’ADDI ce n’est pas une théorie, c’est une plongée corporelle dans l’ici et maintenant »</div>
+        <p style="margin-top: 2rem;">Au-delà de l’observation, ce chemin m’a profondément touchée. Revisiter mon histoire personnelle à travers mon développement, dans la relation et en moi-même, m’a offert un appui, une sécurité, une ressource intérieure que je ne soupçonnais pas. C’est cette ressource qui est aujourd’hui la matière première de mon accompagnement. Elle est devenue mon principal outil de soin : elle me permet d’accueillir l’autre dans sa vulnérabilité et de l’inviter à renouer avec son propre mouvement de vie.</p>
+        <div class="citation-bleue" style="margin-top: 2rem;">« J’ai reçu une sécurité, une ressource intérieure que je ne soupçonnais pas »</div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <img src="images/photo-ressource.jpg" alt="Ressource intérieure" style="max-width: 100%; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+        </div>
+    </section>
+
+    <!-- Section Médiation Créative (mise à jour) -->
+    <section id="mediation" style="background-color: var(--fond-citation); max-width: 100%; padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>Médiation Créative</h2>
+            <p>J’utilise l’expression gestuelle, la danse naturelle et l’art comme outils de rencontre avec soi-même. Chaque séance est un espace de liberté où l’on crée pour se recréer.</p>
+            <p>Sur ce socle vivant se sont greffés des dispositifs variés que j'ai intériorisés au fil du temps : médiation artistique, écoute musicale, approche corporelle et relationnelle.</p>
+            
+            <div class="citation-bleue">
+                « C’est là, dans cette simplicité, que je vous accompagne, pas à pas, geste après geste pour ouvrir un chemin des possibles »
+            </div>
+
+            <div class="section-avec-image" style="margin-top: 2rem; justify-content: center;">
+                <img src="images/mediation-outils.png" alt="Outils de médiation" class="mediation-img">
+                <img src="images/mediation-accompagnement.jpg" alt="Accompagnement" class="mediation-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <!-- CONTENU FICTIF - à remplacer par de vrais témoignages de patients dès que disponibles -->
+    <section id="temoignages">
+        <h2>Témoignages</h2>
+        <p style="font-style: italic; margin-bottom: 2rem;">Exemples provisoires, en attendant de vrais retours de participants.</p>
+        <div class="grid">
+            <div class="temoignage">
+                <p>« Un espace où j'ai enfin pu ralentir et me reconnecter à mon corps, sans jugement. »</p>
+                <p class="temoignage-nom">— Prénom, participant·e</p>
+            </div>
+            <div class="temoignage">
+                <p>« Les séances m'ont aidé à traverser une période difficile avec plus de douceur envers moi-même. »</p>
+                <p class="temoignage-nom">— Prénom, participant·e</p>
+            </div>
+            <div class="temoignage">
+                <p>« Un accompagnement bienveillant qui m'a permis de retrouver confiance dans mon mouvement. »</p>
+                <p class="temoignage-nom">— Prénom, participant·e</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Inspiration & Ressources -->
+    <section id="inspiration" style="background-color: var(--fond-citation); max-width: 100%; padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>Inspiration & Ressources</h2>
+            <p>Mon approche s'appuie sur la formation ADDI (Approche Développementale Dynamique et Intégrative) transmise par Marie-Ange Durrwang, que je remercie pour la richesse de cet enseignement.</p>
+            <a href="https://durrwangaddi.wixsite.com/home" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top: 1.5rem;">Découvrir le site de l'ADDI</a>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="section-avec-image">
+            <div class="texte">
+                <p>Pour prendre rendez-vous ou poser une question, n'hésitez pas à m'écrire ou à m'appeler.</p>
+                <p style="margin-top: 1rem; font-weight: 600; font-size: 1.3rem;">📞 07 82 63 70 92</p>
+                <p>📧 <a href="mailto:nicolaschochod@orange.fr" style="color: var(--accent);">nicolaschochod@orange.fr</a></p>
+                <p style="margin-top: 1rem; font-weight: 600;">Tarifs : en fonction de vos revenus</p>
+            </div>
+            <img src="images/photo-contact.jpg" alt="Contact" class="photo-contact">
+        </div>
+        <h3 style="margin-top: 3rem;">Où se déroulent les séances</h3>
+        <iframe class="map-embed" src="https://www.google.com/maps?q=17+rue+Waldwisse,+69440+Mornant&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation des séances - 17 rue Waldwisse, Mornant"></iframe>
+    </section>
+
+    <footer>
+        <p>© 2026 Nicolas Charreyre – Danse-Thérapeute ADDI & Médiation Créative</p>
+    </footer>
+</body>
+</html>
