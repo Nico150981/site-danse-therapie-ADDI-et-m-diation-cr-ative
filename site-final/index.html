@@ -106,6 +106,15 @@
             font-size: 1.1rem;
         }
         nav a:hover { color: var(--accent); }
+        nav a:nth-child(1):hover { color: #0277BD; }
+        nav a:nth-child(2):hover { color: #4F46E5; }
+        nav a:nth-child(3):hover { color: #7C3AED; }
+        nav a:nth-child(4):hover { color: #DC2626; }
+        nav a:nth-child(5):hover { color: #EA580C; }
+        nav a:nth-child(6):hover { color: #CA8A04; }
+        nav a:nth-child(7):hover { color: #16A34A; }
+        nav a:nth-child(8):hover { color: #0277BD; }
+        nav a:nth-child(9):hover { color: #4F46E5; }
         section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; scroll-margin-top: 100px; }
         h2 {
             font-family: var(--police-titres);
@@ -152,6 +161,11 @@
             font-weight: bold;
             font-style: italic;
             border-radius: 0 8px 8px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .citation-bleue:hover {
+            transform: scale(1.02) translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
         }
         .citation-1 { background: #FDECEC; border-left: 6px solid #DC2626; color: #B91C1C; }
         .citation-2 { background: #FFF1E6; border-left: 6px solid #EA580C; color: #C2410C; }
@@ -219,10 +233,20 @@
             font-size: 1.2rem;
         }
         .photo-contact {
-            flex: 0 1 320px !important;
-            max-width: 320px !important;
-            height: 400px;
+            flex: 0 1 480px !important;
+            max-width: 480px !important;
+            height: 600px;
             object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .photo-contact:hover {
+            transform: scale(1.05);
+        }
+        .img-hover-zoom {
+            transition: transform 0.4s ease;
+        }
+        .img-hover-zoom:hover {
+            transform: scale(1.05);
         }
         .mediation-img {
             flex: 0 1 320px !important;
@@ -342,7 +366,7 @@
             <h2>Lieu d’Accueil & de Soin</h2>
             <div class="section-avec-image">
                 <div class="texte"><p>Je vous accueille dans un lieu bienveillant, chaleureux, lumineux, naturel et discret, on se sent chez soi, en sécurité, accueilli tel que l’on est, en toute authenticité et en confiance. C’est un cadre de soin où l’on retrouve la joie de vivre dans l’instant présent, un espace de créativité, de recréation de soi, de cœur à cœur.</p></div>
-                <img src="images/photo-accueil.jpg" alt="Lieu d'accueil chaleureux">
+                <img src="images/photo-accueil.jpg" alt="Lieu d'accueil chaleureux" class="img-hover-zoom">
             </div>
         </div>
     </section>
@@ -370,7 +394,7 @@
             <div class="citation-bleue citation-2">« Je suis passionné par le mouvement,<br> le soin, et l’expression de soi »</div>
             <div class="section-avec-image" style="margin-top: 2rem;">
                 <div class="texte"><p>En 2021, j’ai suivi pendant un an une formation en art-thérapie à Avignon. Désireux de revenir aux origines de la danse-thérapie, j’ai ensuite participé, en tant que soignant, à une formation continue ADDI (Approche Développementale Dynamique et Intégrative) avec Marie-Ange Durwang, aux côtés de psychomotriciens. Cette expérience m’a permis de rencontrer des personnes formidables et de découvrir la richesse d’un travail de groupe fondé sur la bienveillance, la qualité de présence et le soin de soi.</p></div>
-                <img src="images/photo-atelier.jpg" alt="Atelier">
+                <img src="images/photo-atelier.jpg" alt="Atelier" class="img-hover-zoom">
             </div>
             <p style="margin-top: 2rem;">Je poursuis également mon exploration par la participation à plusieurs ateliers de Body-Mind Centering. L’ADDI m’a offert l’occasion d’unifier mes expériences somatiques, artistiques, relationnelles et dansées.</p>
             <p>Aujourd’hui, animé par une profonde conscience des fragilités de notre société, j’ai souhaité proposer un accompagnement aux adultes en transition, en surmenage ou en burn-out. Mon intention est d’offrir un espace d’écoute, de présence et de ressourcement, dans un cadre humain, respectueux et bienveillant.</p>
@@ -389,7 +413,7 @@
         <p style="margin-top: 2rem;">Au-delà de l’observation, ce chemin m’a profondément touchée. Revisiter mon histoire personnelle à travers mon développement, dans la relation et en moi-même, m’a offert un appui, une sécurité, une ressource intérieure que je ne soupçonnais pas. C’est cette ressource qui est aujourd’hui la matière première de mon accompagnement. Elle est devenue mon principal outil de soin : elle me permet d’accueillir l’autre dans sa vulnérabilité et de l’inviter à renouer avec son propre mouvement de vie.</p>
         <div class="citation-bleue citation-5" style="margin-top: 2rem;">« J’ai reçu une sécurité, une ressource intérieure que je ne soupçonnais pas »</div>
         <div style="text-align: center; margin-top: 2rem;">
-            <img src="images/photo-ressource.jpg" alt="Ressource intérieure" style="max-width: 100%; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+            <img src="images/photo-ressource.jpg" alt="Ressource intérieure" class="img-hover-zoom" style="max-width: 100%; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
         </div>
     </section>
 
