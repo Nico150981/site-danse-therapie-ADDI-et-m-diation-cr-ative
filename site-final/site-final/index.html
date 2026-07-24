@@ -106,7 +106,7 @@
             font-size: 1.1rem;
         }
         nav a:hover { color: var(--accent); }
-        section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+        section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; scroll-margin-top: 100px; }
         h2 {
             font-family: var(--police-titres);
             font-size: 3rem;
@@ -126,6 +126,10 @@
             border-radius: 20px;
             margin-bottom: 3rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease;
+        }
+        .accueil-image:hover {
+            transform: scale(1.03);
         }
         .accueil-intro {
             font-size: 2.2rem;
@@ -141,17 +145,20 @@
             margin-bottom: 0.5rem;
         }
         .citation-bleue {
-            background: var(--bleu-ciel);
-            border-left: 6px solid var(--bleu-ciel-texte);
             padding: 1.5rem 2rem;
             margin: 2rem 0;
             font-family: var(--police-titres);
             font-size: 1.7rem;
             font-weight: bold;
             font-style: italic;
-            color: var(--bleu-ciel-texte);
             border-radius: 0 8px 8px 0;
         }
+        .citation-1 { background: #FDECEC; border-left: 6px solid #DC2626; color: #B91C1C; }
+        .citation-2 { background: #FFF1E6; border-left: 6px solid #EA580C; color: #C2410C; }
+        .citation-3 { background: #FFFBEA; border-left: 6px solid #CA8A04; color: #A16207; }
+        .citation-4 { background: #ECFDF5; border-left: 6px solid #16A34A; color: #15803D; }
+        .citation-5 { background: #E1F5FE; border-left: 6px solid #0277BD; color: #0277BD; }
+        .citation-6 { background: #F5F0FF; border-left: 6px solid #7C3AED; color: #6D28D9; }
         .bloc-chemin {
             margin-top: 2rem;
             padding: 2rem;
@@ -273,6 +280,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         @media (max-width: 768px) {
+            section { scroll-margin-top: 170px; }
             header { flex-direction: column; gap: 1rem; }
             nav a { margin: 0 0.5rem; font-size: 1rem; }
             .accueil-intro { font-size: 1.6rem; }
@@ -314,7 +322,7 @@
         <p style="margin-top: 1.5rem;">Avant l'épuisement total ou après un Burnout, une période de transition de vie complexe, venez prendre le temps de ralentir, de laisser le chemin se faire en soi.</p>
 
         <div class="section-avec-image" style="margin-top: 2rem;">
-            <div class="citation-bleue" style="margin:0; flex: 2 1 400px;">
+            <div class="citation-bleue citation-1" style="margin:0; flex: 2 1 400px;">
                 « Un voyage pour sentir, goûter, savourer :<br> vers un mieux-être »
             </div>
             <img src="images/ressourcement.jpg" alt="Ressourcement" class="img-half">
@@ -359,7 +367,7 @@
                 <div class="texte"><p>Je suis aide-soignant à domicile depuis plus de 14 ans. Passionné par les danses folkloriques d’Israël, la danse de louange et la danse naturelle, j’ai développé au fil du temps un profond intérêt pour le lien entre le mouvement, le soin et l’expression de soi.</p></div>
                 <img src="images/photo-addi.png" alt="ADDI" class="img-half">
             </div>
-            <div class="citation-bleue">« Je suis passionné par le mouvement,<br> le soin, et l’expression de soi »</div>
+            <div class="citation-bleue citation-2">« Je suis passionné par le mouvement,<br> le soin, et l’expression de soi »</div>
             <div class="section-avec-image" style="margin-top: 2rem;">
                 <div class="texte"><p>En 2021, j’ai suivi pendant un an une formation en art-thérapie à Avignon. Désireux de revenir aux origines de la danse-thérapie, j’ai ensuite participé, en tant que soignant, à une formation continue ADDI (Approche Développementale Dynamique et Intégrative) avec Marie-Ange Durwang, aux côtés de psychomotriciens. Cette expérience m’a permis de rencontrer des personnes formidables et de découvrir la richesse d’un travail de groupe fondé sur la bienveillance, la qualité de présence et le soin de soi.</p></div>
                 <img src="images/photo-atelier.jpg" alt="Atelier">
@@ -372,14 +380,14 @@
     <!-- Section Approche -->
     <section id="approche">
         <h2>Une approche globale et dynamique du soin</h2>
-        <div class="citation-bleue">« Le soin s’enracine dans l’observation clinique<br> de l’enfant sain »</div>
+        <div class="citation-bleue citation-3">« Le soin s’enracine dans l’observation clinique<br> de l’enfant sain »</div>
         <div class="section-avec-image" style="margin-top: 2rem;">
             <div class="texte"><p>Ce qui me parle profondément dans la démarche de l’ADDI, c’est que le travail de soin s’enracine dans l’observation clinique de l’enfant sain, son mouvement physique au sein de son environnement naturel, pour favoriser son développement. C'est un cadre de référence pour le soin de l'adulte. L’ADDI ce n’est pas une théorie, c’est « une plongée corporelle dans ici et maintenant ». J'ai revisité, observé et intégré sensoriellement mon propre mouvement de développement, toujours en relation. Cette approche m’a permis d'affiner une perception fine de l’autre : dans ses interactions, son identité naissante et son rapport à lui-même.</p></div>
             <img src="images/photo-approche.png" alt="Approche ADDI" class="img-medium">
         </div>
-        <div class="citation-bleue" style="margin-top: 2rem;">« L’ADDI ce n’est pas une théorie, c’est une plongée corporelle dans l’ici et maintenant »</div>
+        <div class="citation-bleue citation-4" style="margin-top: 2rem;">« L’ADDI ce n’est pas une théorie, c’est une plongée corporelle dans l’ici et maintenant »</div>
         <p style="margin-top: 2rem;">Au-delà de l’observation, ce chemin m’a profondément touchée. Revisiter mon histoire personnelle à travers mon développement, dans la relation et en moi-même, m’a offert un appui, une sécurité, une ressource intérieure que je ne soupçonnais pas. C’est cette ressource qui est aujourd’hui la matière première de mon accompagnement. Elle est devenue mon principal outil de soin : elle me permet d’accueillir l’autre dans sa vulnérabilité et de l’inviter à renouer avec son propre mouvement de vie.</p>
-        <div class="citation-bleue" style="margin-top: 2rem;">« J’ai reçu une sécurité, une ressource intérieure que je ne soupçonnais pas »</div>
+        <div class="citation-bleue citation-5" style="margin-top: 2rem;">« J’ai reçu une sécurité, une ressource intérieure que je ne soupçonnais pas »</div>
         <div style="text-align: center; margin-top: 2rem;">
             <img src="images/photo-ressource.jpg" alt="Ressource intérieure" style="max-width: 100%; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
         </div>
@@ -392,7 +400,7 @@
             <p>J’utilise l’expression gestuelle, la danse naturelle et l’art comme outils de rencontre avec soi-même. Chaque séance est un espace de liberté où l’on crée pour se recréer.</p>
             <p>Sur ce socle vivant se sont greffés des dispositifs variés que j'ai intériorisés au fil du temps : médiation artistique, écoute musicale, approche corporelle et relationnelle.</p>
             
-            <div class="citation-bleue">
+            <div class="citation-bleue citation-6">
                 « C’est là, dans cette simplicité, que je vous accompagne, pas à pas, geste après geste pour ouvrir un chemin des possibles »
             </div>
 
