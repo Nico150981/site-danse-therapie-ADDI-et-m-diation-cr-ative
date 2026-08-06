@@ -341,3 +341,42 @@
             font-style: normal;
             opacity: 0.85;
         }
+        .citation-arcenciel {
+            background: var(--fond-carte);
+            border-left: 6px solid transparent;
+            border-image: linear-gradient(180deg, #DC2626, #EA580C, #CA8A04, #16A34A, #0277BD, #7C3AED) 1;
+        }
+        .texte-arc-en-ciel {
+            background: linear-gradient(90deg, #DC2626, #EA580C, #CA8A04, #16A34A, #0277BD, #4F46E5, #7C3AED, #DC2626);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            animation: arc-en-ciel-mouvement 6s linear infinite;
+        }
+        @keyframes arc-en-ciel-mouvement {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .texte-arc-en-ciel { animation: none; }
+        }
+        .bloc-audio {
+            background: var(--fond-carte);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .bloc-audio p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center !important;
+        }
+        .bloc-audio audio {
+            width: 100%;
+            max-width: 500px;
+        }
