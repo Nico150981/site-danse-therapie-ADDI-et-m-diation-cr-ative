@@ -63,6 +63,32 @@
         </nav>
     </header>
 
+    <!-- Section Héro vidéo (nouvelle page d'entrée du site) -->
+    <section id="hero-video" class="hero-video">
+        <video
+            id="heroVideo"
+            class="hero-video__media"
+            poster="video/mer-poster.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto">
+            <source src="video/mer-hero.mp4" type="video/mp4">
+        </video>
+
+        <button id="heroSound" class="hero-video__sound" aria-label="Activer le son" aria-pressed="false">🔇</button>
+
+        <div class="hero-video__content">
+            <p class="hero-video__eyebrow">Danse-Thérapie ADDI &amp; Médiation Créative</p>
+            <h1 class="hero-video__title">Se ressourcer, se retrouver</h1>
+        </div>
+
+        <button id="heroScroll" class="hero-video__scroll" aria-label="Découvrir le site">
+            <span></span>
+        </button>
+    </section>
+
     <!-- Section Accueil -->
     <section id="accueil" style="padding-top: 2rem; padding-bottom: 6rem;">
         <img src="images/accueil-isadora.jpg" alt="Danse et mouvement" class="accueil-image">
@@ -97,6 +123,43 @@
             <p>vous êtes libre pour imaginer, créer, explorer, s'exprimer et danser.</p>
             <p style="margin-top: 1.2rem;"><strong>Se déposer :</strong> déposer ses histoires et expériences, évacuer ses souffrances, troubles et mal-être, p(a)enser ses blessures, et réguler ses émotions.</p>
         </div>
+
+        <div class="ressenti-grid">
+            <div class="ressenti-carte">
+                <div class="ressenti-icone" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M24 30c-8-5-13-9.5-13-15A7 7 0 0 1 24 11a7 7 0 0 1 13 4c0 5.5-5 10-13 15z"/>
+                        <path d="M8 38c2-4 6-6 10-6h6c3 0 5-1 7-3l6-6"/>
+                    </svg>
+                </div>
+                <h3>Se sentir COMPRIS</h3>
+                <p>Les ressentis sont validés.</p>
+                <p class="ressenti-citation">« Oui, ce que tu vis là est réel et important. »</p>
+            </div>
+            <div class="ressenti-carte">
+                <div class="ressenti-icone" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M24 40V22"/>
+                        <path d="M24 24c0-7-5-12-12-12 0 7 5 12 12 12z"/>
+                        <path d="M24 20c0-6 4.5-11 11-11 0 6-4.5 11-11 11z"/>
+                    </svg>
+                </div>
+                <h3>Se sentir VIVANT</h3>
+                <p>Être rejoint dans son élan vital, ressentir une énergie intérieure affirmée.</p>
+            </div>
+            <div class="ressenti-carte">
+                <div class="ressenti-icone" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="24" cy="24" r="7"/>
+                        <path d="M24 4v6M24 38v6M44 24h-6M10 24H4M37.6 10.4l-4.2 4.2M14.6 33.4l-4.2 4.2M37.6 37.6l-4.2-4.2M14.6 14.6l-4.2-4.2"/>
+                    </svg>
+                </div>
+                <h3>Se sentir EXISTANT</h3>
+                <p>Pouvoir être soi-même, sans masque.</p>
+                <p class="ressenti-citation">« Je peux exister pleinement. »</p>
+            </div>
+        </div>
+
         <a href="#contact" class="btn">Prendre rendez-vous</a>
     </section>
 
@@ -230,5 +293,82 @@
     <footer>
         <p>© 2026 Nicolas Charreyre – Danse-Thérapeute ADDI & Médiation Créative</p>
     </footer>
+
+    <script>
+    (function () {
+        var video = document.getElementById('heroVideo');
+        var soundBtn = document.getElementById('heroSound');
+        var scrollBtn = document.getElementById('heroScroll');
+        var hero = document.getElementById('hero-video');
+        var accueil = document.getElementById('accueil');
+        var frozen = false;
+
+        // Fige la vidéo sur l'image courante (comportement natif de pause() : la dernière
+        // image affichée reste visible à l'écran, pas besoin de la remplacer par une photo).
+        function freezeVideo() {
+            if (frozen || !video) return;
+            frozen = true;
+            video.pause();
+        }
+
+        // Le son démarre coupé (obligatoire pour l'autoplay dans tous les navigateurs) ;
+        // ce bouton laisse le visiteur l'activer en un clic.
+        if (soundBtn) {
+            soundBtn.addEventListener('click', function () {
+                video.muted = !video.muted;
+                soundBtn.textContent = video.muted ? '🔇' : '🔊';
+                soundBtn.setAttribute('aria-pressed', String(!video.muted));
+            });
+        }
+
+        // Clic sur la flèche : on fige la vidéo et on descend en douceur vers le site existant.
+        if (scrollBtn) {
+            scrollBtn.addEventListener('click', function () {
+                freezeVideo();
+                if (accueil) accueil.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // Défilement naturel de la souris/du doigt : dès que le héro sort majoritairement
+        // de l'écran, la vidéo se fige aussi (pas besoin de cliquer sur la flèche).
+        if ('IntersectionObserver' in window && hero) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting || entry.intersectionRatio < 0.4) {
+                        freezeVideo();
+                    }
+                });
+            }, { threshold: [0, 0.4] });
+            observer.observe(hero);
+        } else if (hero) {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > hero.offsetHeight * 0.5) freezeVideo();
+            }, { passive: true });
+        }
+    })();
+
+    // Apparition en cascade des trois blocs "Se sentir..." quand on arrive sur la section
+    (function () {
+        var cartes = document.querySelectorAll('.ressenti-carte');
+        if (!cartes.length) return;
+
+        var reduitMouvement = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduitMouvement || !('IntersectionObserver' in window)) {
+            cartes.forEach(function (carte) { carte.classList.add('est-visible'); });
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries, obs) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    cartes.forEach(function (carte) { carte.classList.add('est-visible'); });
+                    obs.disconnect(); // ne se déclenche qu'une fois, pas à chaque passage
+                }
+            });
+        }, { threshold: 0.25 });
+
+        observer.observe(document.querySelector('.ressenti-grid'));
+    })();
+    </script>
 </body>
 </html>

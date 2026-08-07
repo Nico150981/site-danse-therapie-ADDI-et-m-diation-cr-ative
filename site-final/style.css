@@ -380,3 +380,166 @@
             width: 100%;
             max-width: 500px;
         }
+
+/* ===== Section Héro vidéo (page d'entrée) ===== */
+.hero-video {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    min-height: 480px;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #0b1f1c; /* teinte sombre pendant le chargement, cohérente avec la vidéo "mer" */
+}
+.hero-video__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-video::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 31, 28, 0.25), rgba(11, 31, 28, 0.55));
+    z-index: 1;
+}
+.hero-video__content {
+    position: relative;
+    z-index: 2;
+    color: var(--fond-page);
+    padding: 0 1.5rem;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+.hero-video__eyebrow {
+    font-family: var(--police-corps);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+.hero-video__title {
+    font-family: var(--police-titres);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.25;
+}
+.hero-video__sound {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-size: 1.15rem;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: background 0.25s;
+}
+.hero-video__sound:hover { background: rgba(255, 255, 255, 0.3); }
+.hero-video__scroll {
+    position: absolute;
+    bottom: 1.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    cursor: pointer;
+    animation: hero-bob 2.2s ease-in-out infinite;
+}
+.hero-video__scroll span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+    margin: 13px auto 0;
+}
+@keyframes hero-bob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-video__scroll { animation: none; }
+}
+@media (max-width: 640px) {
+    .hero-video { height: 70vh; }
+}
+
+/* ===== Trois blocs "Se sentir..." (apparition en cascade au scroll) ===== */
+.ressenti-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+.ressenti-carte {
+    background: linear-gradient(160deg, var(--bleu-ciel) 0%, var(--fond-citation) 100%);
+    border: 1px solid rgba(13, 148, 136, 0.15);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(41, 37, 34, 0.06);
+
+    /* état de départ : invisible, légèrement au-dessus, avant de "se poser" */
+    opacity: 0;
+    transform: translateY(-22px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.ressenti-carte.est-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* décalage pour l'effet "un par un, comme un diaporama" */
+.ressenti-carte:nth-child(1) { transition-delay: 0s; }
+.ressenti-carte:nth-child(2) { transition-delay: 0.22s; }
+.ressenti-carte:nth-child(3) { transition-delay: 0.44s; }
+
+.ressenti-icone {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+    color: var(--accent);
+}
+.ressenti-icone svg { width: 100%; height: 100%; }
+
+.ressenti-carte h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+.ressenti-carte p {
+    font-size: 1rem;
+    color: var(--texte-corps);
+}
+.ressenti-carte .ressenti-citation {
+    margin-top: 0.75rem;
+    font-family: var(--police-texte-explicatif);
+    font-style: italic;
+    color: var(--bleu-ciel-texte);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ressenti-carte {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
