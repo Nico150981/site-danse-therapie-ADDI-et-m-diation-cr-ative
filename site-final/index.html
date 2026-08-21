@@ -298,14 +298,27 @@
     </div>
 
     <h3 style="margin-top: 3rem;">Où se déroulent les séances</h3>
-    <iframe class="map-embed" src="https://www.google.com/maps?q=17+rue+Waldwisse,+69440+Mornant&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation des séances - 17 rue Waldwisse, Mornant"></iframe>
+    <div id="carte-lieu" class="map-embed" onclick="chargerCarte()" role="button" tabindex="0" style="display:flex; align-items:center; justify-content:center; background:#eee; border-radius:8px; cursor:pointer; min-height:400px;">
+        <div style="text-align:center; padding:1.5rem;">
+            <p style="margin-bottom:1rem;">🗺️ Carte masquée par défaut (respect de votre vie privée)</p>
+            <button type="button" style="padding:0.6rem 1.2rem; border:none; border-radius:6px; background:#333; color:white; cursor:pointer;">Afficher la carte</button>
+        </div>
+    </div>
 </section>
 
 <footer>
     <p>© 2026 Nicolas Charreyre – Danse-Thérapeute ADDI & Médiation Créative</p>
+    <p><a href="mentions-legales.html" style="color: inherit;">Mentions légales</a></p>
 </footer>
 
     <script>
+    // Charge la carte Google Maps uniquement au clic du visiteur (aucun traceur
+    // déposé tant qu'il n'a pas cliqué volontairement — voir mentions-legales.html)
+    function chargerCarte() {
+        document.getElementById('carte-lieu').outerHTML =
+            '<iframe class="map-embed" src="https://www.google.com/maps?q=17+rue+Waldwisse,+69440+Mornant&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation des séances - 17 rue Waldwisse, Mornant" allowfullscreen></iframe>';
+    }
+
     (function () {
         var video = document.getElementById('heroVideo');
         var soundBtn = document.getElementById('heroSound');
