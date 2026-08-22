@@ -288,7 +288,23 @@
         <p style="margin-top: 1rem; font-weight: 600; font-size: 1.3rem;">📞 07 82 63 70 92</p>
         <p>📧 <a href="mailto:nicolaschochod@orange.fr" style="color: var(--accent);">nicolaschochod@orange.fr</a></p>
         <p>🔗 <a href="https://www.linkedin.com/in/nicolas-charreyre-chochod-69037a6a/" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">Mon profil LinkedIn</a></p>
-        <p style="margin-top: 1rem; font-weight: 600;">Grille tarifaire : en fonction de vos revenus</p>
+        <p style="margin-top: 1rem; font-weight: 600;">Grille tarifaire solidaire : de 20 € à 80 € la séance, selon vos revenus (détail donné lors du premier contact)</p>
+    </div>
+
+    <!-- Formulaire de rappel : ouvre un e-mail pré-rempli, aucune donnée transmise à un tiers -->
+    <div style="max-width: 420px; margin-top: 2.5rem;">
+        <h3>Ou laissez-moi vous rappeler</h3>
+        <form id="rappel-form">
+            <label style="display:block; margin-bottom:1rem;">
+                Votre prénom<br>
+                <input type="text" id="rappel-prenom" required style="width:100%; padding:0.6rem; margin-top:0.3rem; border-radius:6px; border:1px solid #ccc;">
+            </label>
+            <label style="display:block; margin-bottom:1rem;">
+                Un créneau qui vous convient<br>
+                <input type="text" id="rappel-creneau" placeholder="ex : mardi après-midi" required style="width:100%; padding:0.6rem; margin-top:0.3rem; border-radius:6px; border:1px solid #ccc;">
+            </label>
+            <button type="submit" class="btn">Demander à être rappelé(e)</button>
+        </form>
     </div>
 
     <!-- Image centrée avec une largeur maîtrisée pour éviter le flou -->
@@ -313,6 +329,23 @@
     <script>
     // Charge la carte Google Maps uniquement au clic du visiteur (aucun traceur
     // déposé tant qu'il n'a pas cliqué volontairement — voir mentions-legales.html)
+    // Formulaire de rappel : ouvre un e-mail pré-rempli dans le client mail du visiteur.
+    // Rien n'est envoyé à un serveur tiers, donc aucun impact RGPD supplémentaire.
+    var rappelForm = document.getElementById('rappel-form');
+    if (rappelForm) {
+        rappelForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var prenom = document.getElementById('rappel-prenom').value;
+            var creneau = document.getElementById('rappel-creneau').value;
+            var sujet = encodeURIComponent('Demande de rappel');
+            var corps = encodeURIComponent(
+                'Bonjour,\n\nJe souhaiterais être rappelé(e).\nPrénom : ' + prenom +
+                '\nCréneau préféré : ' + creneau + '\n\nMerci !'
+            );
+            window.location.href = 'mailto:nicolaschochod@orange.fr?subject=' + sujet + '&body=' + corps;
+        });
+    }
+
     function chargerCarte() {
         document.getElementById('carte-lieu').outerHTML =
             '<iframe class="map-embed" src="https://www.google.com/maps?q=17+rue+Waldwisse,+69440+Mornant&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation des séances - 17 rue Waldwisse, Mornant" allowfullscreen></iframe>';
