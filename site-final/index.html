@@ -288,7 +288,7 @@
         <p style="margin-top: 1rem; font-weight: 600; font-size: 1.3rem;">📞 07 82 63 70 92</p>
         <p>📧 <a href="mailto:nicolaschochod@orange.fr" style="color: var(--accent);">nicolaschochod@orange.fr</a></p>
         <p>🔗 <a href="https://www.linkedin.com/in/nicolas-charreyre-chochod-69037a6a/" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">Mon profil LinkedIn</a></p>
-        <p style="margin-top: 1rem; font-weight: 600;">Grille tarifaire solidaire : de 20 € à 80 € la séance, selon vos revenus (détail donné lors du premier contact)</p>
+        <p style="margin-top: 1rem; font-weight: 600;"><a href="#" onclick="document.getElementById('grille-tarifaire-modal').style.display='flex'; return false;" style="color: var(--accent); text-decoration: underline; cursor: pointer;">Grille tarifaire solidaire</a> : de 20 € à 80 € la séance, selon vos revenus (détail donné lors du premier contact)</p>
     </div>
 
     <!-- Formulaire de rappel : ouvre un e-mail pré-rempli, aucune donnée transmise à un tiers -->
@@ -325,6 +325,11 @@
     <p>© 2026 Nicolas Charreyre – Danse-Thérapeute ADDI & Médiation Créative</p>
     <p><a href="mentions-legales.html" style="color: inherit;">Mentions légales</a></p>
 </footer>
+
+<!-- Fenêtre affichant la grille tarifaire complète au clic ; un clic n'importe où la referme -->
+<div id="grille-tarifaire-modal" onclick="this.style.display='none';" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:1000; align-items:center; justify-content:center; padding:2rem; cursor:zoom-out;">
+    <img src="images/Tarif_solidaire_2026.png" alt="Grille tarifaire solidaire 2026" style="max-width:95%; max-height:90vh; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.4);">
+</div>
 
     <script>
     // Charge la carte Google Maps uniquement au clic du visiteur (aucun traceur
